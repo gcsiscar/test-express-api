@@ -2,7 +2,13 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-    console.log("Request received")
+    console.log("GET Request: " + req.url)
+    res.status(200).json({message: "Hello World"})
+})
+
+
+app.post("/", (req, res) => {
+    console.log("POST Request: " + req.url)
     res.status(200).json({message: "Hello World"})
 })
 
