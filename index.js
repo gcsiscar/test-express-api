@@ -4,14 +4,14 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    console.log("GET Request: " + req.url)
-    res.status(200).json({message: "Hello World"})
+    console.log("GET Request: " + req.url);
+    res.status(200).json({message: "Hello World"});
 })
 
 
 app.post("/", (req, res) => {
-    console.log(req.body)
-    res.status(200).json({message: "Ok"})
+    console.log("Email: " + req.body.email);
+    res.status(200).json({message: "Ok"});
 })
 
 
