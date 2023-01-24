@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
     console.log("GET Request: " + req.url)
     res.status(200).json({message: "Hello World"})
@@ -8,8 +10,8 @@ app.get("/", (req, res) => {
 
 
 app.post("/", (req, res) => {
-    console.log("POST Request: " + req.url)
-    res.status(200).json({message: "Hello World"})
+    console.log(req.body)
+    res.status(200).json({message: "Ok"})
 })
 
 
