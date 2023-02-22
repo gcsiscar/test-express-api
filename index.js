@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    console.log("GET Request: " + req.url);
+    console.log("Method: " + req.method);
     res.status(200).json({message: "Hello World"});
 })
 
@@ -12,6 +12,11 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     console.log(req.body);
     res.status(200).json({message: "Ok"});
+})
+
+app.delete("/", (req, res) => {
+    console.log("URL: " + req.url);
+    res.status(200).json({message: "Delete"});
 })
 
 
