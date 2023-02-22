@@ -14,7 +14,7 @@ app.post("/", (req, res) => {
     res.status(200).json({message: "Ok"});
 })
 
-app.delete("/", (req, res) => {
+app.delete("/:key", (req, res) => {
     console.log("URL: " + req.url);
     res.status(200).json({message: "Delete"});
 })
