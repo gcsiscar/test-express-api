@@ -15,7 +15,7 @@ app.post("/", (req, res) => {
 })
 
 app.delete("/:key", (req, res) => {
-    console.log("URL: " + req.url);
+    console.log("URL: " + req.path);
     res.status(200).json({message: "Delete"});
 })
 
