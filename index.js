@@ -5,18 +5,26 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     console.log("Method: " + req.method);
-    res.status(200).json({message: "Hello World"});
+    res.status(200).json({ message: "Hello World" });
 })
 
 
 app.post("/", (req, res) => {
     console.log(req.body);
-    res.status(200).json({message: "Ok"});
+    res.status(200).json({ message: "Ok" });
 })
 
 app.delete("/:key", (req, res) => {
-    console.log("URL: " + req.path);
-    res.status(200).json({message: "Delete"});
+    const host = req.hostname;
+    const url = req.originalUrl;
+    console.log("URL: " + host + url);
+    res.status(200).json({ message: "Delete" });
+})
+
+app.post("/webhook", (req, res) => {
+    console.log(req.body)
+
+    res.status(200).json({ message: "Webhook Received" });
 })
 
 
